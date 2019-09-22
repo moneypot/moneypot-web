@@ -1,6 +1,5 @@
 import React from 'react'
-import * as hiImport from 'hookedin-lib'
-
+import * as mpImport from 'moneypot-lib'
 
 export default class Repl extends React.Component {
 
@@ -18,7 +17,7 @@ export default class Repl extends React.Component {
     let r;
     try {
       // eslint-disable-next-line
-      const hi = hiImport;
+      const mp = mpImport;
       // eslint-disable-next-line
       r = eval(code);
     } catch (ex) {
@@ -26,7 +25,8 @@ export default class Repl extends React.Component {
       return "Caught exception " + ex + " and logged to browser console";
     }
 
-    return (typeof r === 'string') ? r : JSON.stringify(r, null, 4);
+    // return (typeof r === 'string') ? r : JSON.stringify(r, null, 4);
+    return JSON.stringify(r, (_, v) => typeof v === 'bigint' ? `${v}n` : v);
   }
 
   onChange(event) {
@@ -72,4 +72,3 @@ export default class Repl extends React.Component {
     )
   }
 }
-

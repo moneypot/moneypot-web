@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import CustomNavbar from './custom-navbar'
 import Footer from './footer'
-import './layout.scss'
+import '../scss/main.scss'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {faCheck, faChevronRight, faExchangeAlt, faLink, faTimes} from '@fortawesome/free-solid-svg-icons'
 library.add(faCheck, faChevronRight, faLink, faExchangeAlt, faTimes)

@@ -1,0 +1,109 @@
+@import '../utils/colors';
+
+.tx-stats-table > div {
+    height: 52px;
+    border-top: 1px solid #dee2e6;
+    font-size: 16px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.tx-stats-table > div > * {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.tx-stats-table > div:last-child {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.tx-stats-table > div > div:nth-child(1) {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #78838e;
+}
+
+.tx-stats-table > div > div:nth-child(2) {
+    text-align: right;
+    word-break: break-word;
+}
+
+/* Inputs and Outputs table */
+
+.transaction-card {
+    margin: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #dee2e6;
+
+
+}
+
+.transaction-subtitle {
+    color: $theme-color;
+    word-break: break-word;
+
+}
+.inputs-and-outputs-subtitle {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: $gray-600;
+}
+
+@media only screen and (max-width: 960px) {
+    .inputs-and-outputs-subtitle {
+        margin-top: 1rem;
+    }
+}
+
+
+
+.tx-input-and-output-table {
+    background: #eff0f1;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+}
+
+.tx-input-and-output-table > div {
+    background: #fff;
+    height: 52px;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    font-size: 16px;
+}
+.tx-input-and-output-table > div {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tx-input-and-output-table > div:nth-child(1) {
+    margin-top: 0px;
+}
+
+.tx-input-and-output-table > div > * {
+    display: table-cell;
+}
+
+.tx-input-and-output-table > div:last-child {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.tx-input-and-output-table > div > div:nth-child(1) {
+    letter-spacing: 0.1rem;
+    color: #78838e;
+    width: 10%;
+}
+
+.tx-input-and-output-table > div > div:nth-child(2) {
+    word-break: break-word;
+}
+
+.hl-input-and-output-cell {
+    background-color: lighten($theme-color, 50%) !important;
+}

@@ -1,14 +1,12 @@
 import React from 'react'
 
 
-const SectionDiv = ({children} : any) => (
-    <div
-        style={{
-            margin: '1rem 2rem',
-            padding: '1rem',
-        }}
-    >
-        {children}
-    </div>
-)
-export default SectionDiv
+const SectionDiv = ({children} : any) =>  {
+     return (        
+   <div className="section-div">
+     {children}
+      </div> )
+}
+
+
+    export default SectionDiv
