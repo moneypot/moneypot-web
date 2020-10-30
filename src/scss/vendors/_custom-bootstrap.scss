@@ -1,0 +1,70 @@
+
+// Buttons
+
+.btn-primary, .btn-secondary {
+  color: #fff !important;
+}
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           .3rem !default;
+$btn-border-radius-lg:        1.5rem !important;
+$btn-border-radius-sm:        .25rem !default;
+
+
+// Button padding
+
+$btn-padding-x:               1rem;
+
+$btn-padding-x-sm:            0.75rem;
+
+$btn-padding-x-lg:            1.5rem !default;
+
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+$enable-rounded: true !default;
+$enable-shadows: true !default;
+$enable-gradients: false !default;
+$enable-transitions: false !default;
+$enable-hover-media-query: false !default;
+$enable-grid-classes: true !default;
+$enable-print-styles: true !default;
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+        sm: 540px,
+        md: 640px,
+        lg: 710px,
+        xl: 780px,
+) !default;
+
+// Body
+//
+// Settings for the `<body>` element.
+
+$body-bg: $white !default;
+$body-color: $text-color !default;
+$inverse-bg: $gray-900 !default;
+$inverse-color: $gray-600 !default;
+
+// Links
+//
+// Style anchor elements.
+$link-decoration: none !default;
+$link-hover-decoration: none !default;
+
+//Cards
+$card-border-color: transparent !default;
+$card-bg: transparent;
+
+//List-Group
+$list-group-border-color: transparent;
+$list-group-item-padding-y:  .5rem !default;
+
+// Import bootstrap
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+

@@ -3,6 +3,8 @@ import { Link } from 'gatsby'
 import { Row, Col, Badge} from 'reactstrap';
 import * as Api from '../api-types'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
 
 interface TxPreviewProps {
     tx: Api.TxResponse;

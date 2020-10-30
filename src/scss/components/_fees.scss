@@ -1,0 +1,12 @@
+
+.fee-box {
+  padding: 15px;
+  margin: 15px;
+  border-radius: 4px;
+}
+
+.green-fee {
+  background-color: $lighter-green;
+  color: darken($darker-green, 35%);
+}
+

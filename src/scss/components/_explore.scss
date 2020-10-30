@@ -1,0 +1,12 @@
+@import '../utils/colors';
+
+.explore-header {
+  background-color: $theme-color;
+  margin: -2rem -7rem 2rem;
+  padding: 2rem 7rem;
+  color: #fff;
+}
+
+.explore-header > h2 {
+  margin-bottom: 0px;
+}

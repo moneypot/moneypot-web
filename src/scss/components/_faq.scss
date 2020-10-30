@@ -1,0 +1,42 @@
+.faq-question {
+    padding: 15px;
+    margin: 15px;
+    border-radius: 4px;
+    // letter-spacing: 0.1rem;
+    color: #78838e;
+    cursor: pointer;
+    
+}  
+.faq-header { 
+    color: #3D91F9;
+}
+.faq-linebreak { 
+    margin-bottom:30px;
+}
+
+
+.faq-answer { 
+    display: none;
+    color: #343a40
+}
+
+.open .faq-answer {
+   display: block;
+ }
+
+ .collapse:not(.show) {
+    display: none;
+  }
+  
+  .collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .collapsing {
+      transition: none;
+    }
+  }

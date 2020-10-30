@@ -12,10 +12,10 @@ import Repl from '../../components/repl'
 const sections = [
     ["Create New Private Key", <div>
         We can easily create new private keys!
-            <Repl>hi.PrivateKey.fromRand().toPOD()</Repl>
+            <Repl>mp.PrivateKey.fromRand().toPOD()</Repl>
     </div>],
     ["Convert an amount to magnitudes", <div>
-        <Repl>hi.amountToMagnitudes(10000)</Repl>
+        <Repl>mp.amountToMagnitudes(10000)</Repl>
     </div>],
     ["Lorem ipsum dolor sit amet", <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim eu turpis egestas pretium. Nisl pretium fusce id velit ut tortor pretium. Tincidunt augue interdum velit euismod in pellentesque massa placerat. Vitae ultricies leo integer malesuada nunc vel risus. Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc. Phasellus vestibulum lorem sed risus ultricies tristique. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Aenean euismod elementum nisi quis eleifend quam. Volutpat diam ut venenatis tellus in metus vulputate eu. Ultrices vitae auctor eu augue. Maecenas volutpat blandit aliquam etiam erat velit. Ridiculus mus mauris vitae ultricies leo. Donec enim diam vulputate ut pharetra sit amet aliquam id.
 

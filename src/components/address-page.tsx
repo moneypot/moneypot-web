@@ -1,7 +1,6 @@
 import React from 'react'
 import SectionDiv from './section-div'
-import './tx-page.scss'
-import './explore.scss'
+import '../scss/components/_explore.scss'
 import {  Button } from 'reactstrap';
 import TxPreview from './tx-preview'
 import * as Api from '../api-types'

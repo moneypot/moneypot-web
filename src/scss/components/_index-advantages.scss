@@ -1,0 +1,39 @@
+
+.text-container {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 3rem;
+}
+.row-container {
+    margin: 3rem;
+}
+
+.index-advantages {
+    margin: '0 -1rem';
+    padding: '2rem 4rem';
+}
+
+@media only screen and (max-width: 600px) {
+.text-container {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem 0rem;
+}
+
+.row-container { 
+    margin: 0rem;
+}
+.index-advantages {
+    margin: '0 0rem';
+    padding: '0rem 0rem';
+}
+}
+
+
+.header {
+    margin-top: 1rem;
+    margin-bottom: 1rem
+}
+

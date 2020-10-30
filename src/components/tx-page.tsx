@@ -1,7 +1,5 @@
 import React from 'react'
 import SectionDiv from './section-div'
-import './tx-page.scss'
-import './explore.scss'
 import { Row } from 'reactstrap';
 import * as Api from '../api-types'
 import TxPreview from './tx-preview'
