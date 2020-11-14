@@ -109,7 +109,7 @@ const LatestUrl = () => {
     useEffect(() => { 
         const wrapper = async () => { 
             // fetch updates.moneypot.dev
-            const json = await (await fetch("../../latest-version/latest-version.json")).json()
+            const json = await (await fetch("https://updates.moneypot.dev")).json()
             setDate(json.latestDate) 
             setVersionUrl(json.versionScript)
         }

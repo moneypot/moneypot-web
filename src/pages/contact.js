@@ -16,7 +16,7 @@ const Contact = () => (
                     </h2>
                     <hr />
                     <p>
-                        For support requests related to the wallet or it's affiliated and or linked custodians, you can send an email to <a href="mailto:support@moneypot.dev?Subject=Support%20Request">support@moneypot.dev</a> 
+                        For support requests related to the wallet or its affiliated custodians, you can send an email to <a href="mailto:support@moneypot.dev?Subject=Support%20Request">support@moneypot.dev</a> 
                     </p>
                     <p>
                         Alternatively, if the question is of public significance, or does not involve sensitive information, you can post in our ANN thread / PM our account on bitcointalk <code>TODO</code>
