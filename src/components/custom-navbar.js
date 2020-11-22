@@ -4,7 +4,6 @@ import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavLink,
     Nav,
     NavItem
 } from "reactstrap";
@@ -30,8 +29,7 @@ const CustomNavbar = (props) => {
     hero != undefined && hero.length > 0 && (collapsed ? hero[0].style.margin = '-5rem -2rem 0' : hero[0].style.margin = '0rem -2rem 0') // !hero
     }, [collapsed])
     return(
-      <React.Fragment>
-        {(!(mobileView)) ? <div className="navbar1"> 
+    (!(mobileView)) ? 
         <Navbar expand="md">
             <Link
                 className={'custom-navbar-brand '+ navbarColorClass }
@@ -63,38 +61,34 @@ const CustomNavbar = (props) => {
                     </NavItem>
                 </Nav>
             </Collapse>
-        </Navbar>
-        </div> :
-        <div className="navbar1-mobile">
-        <Navbar color="faded" light >
-     { isHomepage ? (!collapsed ? <Link to="/" className="mr-auto"> <div className="enlarge-name-moneypot-mobile">moneypot</div></Link> : null) : <Link to="/" className="mr-auto"> <div className="enlarge-name-moneypot-mobile">moneypot</div></Link>   } 
-       <NavbarToggler onClick={toggleNavbar} /> 
-      <Collapse isOpen={!collapsed} navbar >
-      <Nav navbar className="navbar-mobile">
-      <NavItem>
-                        <Link className={'nav-link '+ navbarColorClass } to="/overview/">Overview</Link>
-                    </NavItem>
-                    <NavItem>
-                        <a className={'nav-link '+ navbarColorClass } href="https://wallet.moneypot.com">Wallet</a>
-                    </NavItem>
-                    <NavItem>
-                        <Link className={'nav-link '+ navbarColorClass } to="/faq/">Faq</Link>
-                    </NavItem>
-                    <NavItem>
-                        <Link className={'nav-link '+ navbarColorClass } to="/releases/">Releases</Link>
-                    </NavItem>
-                    <NavItem>
-                        <Link className={'nav-link '+ navbarColorClass } to="/fees/">Fees</Link>
-                    </NavItem>
-                    <NavItem>
-                        <Link className={'nav-link '+ navbarColorClass } to="/docs/">Docs</Link>
-                    </NavItem>
-        </Nav>
-      </Collapse>
-    </Navbar>
-    </div> }
-    </React.Fragment>    
-    
+        </Navbar> : <div className="navbar-mobile">
+        <Navbar color="faded" light>
+ { isHomepage ? (!collapsed ? <Link to="/" className="mr-auto"> <div className="enlarge-name-moneypot-mobile">moneypot</div></Link> : null) : <Link to="/" className="mr-auto"> <div className="enlarge-name-moneypot-mobile">moneypot</div></Link>   } 
+ <NavbarToggler onClick={toggleNavbar} className="mr-2" />
+  <Collapse isOpen={!collapsed} navbar>
+    <Nav navbar>
+    <NavItem>
+                <Link className={'nav-link '+ navbarColorClass } to="/overview/">Overview</Link>
+            </NavItem>
+            <NavItem>
+                <a className={'nav-link '+ navbarColorClass } href="https://wallet.moneypot.com">Wallet</a>
+            </NavItem>
+            <NavItem>
+                <Link className={'nav-link '+ navbarColorClass } to="/faq/">Faq</Link>
+            </NavItem>
+            <NavItem>
+                <Link className={'nav-link '+ navbarColorClass } to="/releases/">Releases</Link>
+            </NavItem>
+            <NavItem>
+                <Link className={'nav-link '+ navbarColorClass } to="/fees/">Fees</Link>
+            </NavItem>
+            <NavItem>
+                <Link className={'nav-link '+ navbarColorClass } to="/docs/">Docs</Link>
+            </NavItem>
+    </Nav>
+    </Collapse> 
+</Navbar> 
+        </div> 
     )
    } 
 export default CustomNavbar

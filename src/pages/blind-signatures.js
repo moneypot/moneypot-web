@@ -8,6 +8,14 @@ const BlindSignatures = () => (
     <Layout>
         <SectionDiv>
             <h1>Blind Signatures</h1>
+            {/* TODO: DO NOT PUSH YET */}
+
+
+
+
+
+
+
         </SectionDiv>
     </Layout>
 )

@@ -103,21 +103,17 @@ const HowandWhy = () => {
 }
 
 const LatestUrl = () => { 
-    const [date, setDate] = useState({});
-    const [VersionUrl, setVersionUrl] = useState({})
-
-    useEffect(() => { 
-        const wrapper = async () => { 
-            // fetch updates.moneypot.dev
-            const json = await (await fetch("https://updates.moneypot.dev")).json()
-            setDate(json.latestDate) 
-            setVersionUrl(json.versionScript)
-        }
-        wrapper()
-    }, [])
+    
+    const [version, setData] = useState(null)
+    const getData = () =>
+      fetch(`https://updates.moneypot.dev/`)
+        .then((res) => res.status === 200 ? res.json() : null).catch(error => alert(error.message));
+        useEffect(() => {
+            getData().then((data) => setData(data))
+        }, [])
     return (
         <SectionDiv>
-        {<br/>}{<hr/>}
+         {<br/>}{<hr/>}
         <h1>Load the latest version URL</h1>
         <p>
             You might be wondering: how do I know I am loading the <i>real</i> wallet file?
@@ -134,42 +130,33 @@ const LatestUrl = () => {
         Make sure to verify the fingerprint matches the one on github. If you're in doubt, contact our support!
         </p>
 
-        <Col className="fee-box list-group-item-success" sm={{ size: 12, offset: 3 }}> 
-    The version URL has last been changed on <strong>{JSON.stringify(new Date(date).toLocaleDateString()).replace(/"/g, '')}</strong> which is <strong>~{JSON.stringify(Math.round((new Date().getTime() - new Date(date).getTime()) / (60*60*24*1000)))}</strong>  days ago! For more information
+       {version != null ?  <Col className="fee-box list-group-item-success" sm={{ size: 12, offset: 3 }}> 
+    The version URL has last been changed on <strong>{JSON.stringify(new Date(version.latestDate).toLocaleDateString()).replace(/"/g, '')}</strong> which is <strong>~{JSON.stringify(Math.round((new Date().getTime() - new Date(version.latestDate).getTime()) / (60*60*24*1000)))}</strong>  days ago! For more information
           please check the{" "}
           <Link to="/changelog/#version-history">version history</Link>
-         </Col>
+         </Col> : undefined}
         <p>
             The current version URL is as following: (as can be found <a href="https://github.com/moneypot/moneypot-wallet-dist/releases/v0.0.1">here</a> on github.)
         </p>
-        <CopyToClipboard className="btn btn-light" style={{}} text={VersionUrl}>
-        {JSON.stringify(VersionUrl).replace(/"/g, '')} {" "}
+        {version != null ?
+        <CopyToClipboard className="btn btn-light" style={{}} text={version.versionScript}>
+        {JSON.stringify(version.versionScript).replace(/"/g, '')} {" "}
          <FontAwesomeIcon icon={faCopy} />
-          </CopyToClipboard>
-        <p>
+          </CopyToClipboard> : undefined } 
+        <p> 
             For which the signature is as following: (which can be found <a href="https://github.com/moneypot/moneypot-wallet-dist/releases/v0.0.1">here</a> on github)
         </p>
+        {version != null ?
         <Col className="fee-box list-group-item-success" sm={{ size: 12, offset: 3 }}> 
-        <code>Signature... Todo?</code>
-         </Col>
+        <code>{version.signature}</code>
+         </Col> : undefined }
         <p>
             As explained, the signature should verify with the key belonging to the fingerprint linked above.
-        </p>
+        </p> 
         </SectionDiv>
 
     )
 }
-// const UseURL = () => { 
-//     return (
-//         <SectionDiv>
-//             <h1>Usage</h1>
-//             <p>
-//                 Please make sure when copying the URL, you 
-//             </p>
-//         </SectionDiv>
-//     )
-// }
-
 
 const Releases = () => { 
     return ( 

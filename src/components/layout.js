@@ -37,7 +37,7 @@ const Layout = ({ children, isHomepage }) => (
             margin: '0 auto',
             padding: '0 2rem 0',
             paddingTop: 0,
-              minHeight: '70vh',
+              minHeight: '0vh',
           }}
         >
           {children}
