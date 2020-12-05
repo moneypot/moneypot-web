@@ -36,19 +36,19 @@ const ReleasesHero = () =>  {
                     <Col xs="12" sm="4" md="4" lg="">
                     <div className="hero-fourth-text">
                         <p >Windows (.exe): </p>
-                        <p>release: v0.0.1</p>
+                        <p>release: v1.0.0</p>
                     </div>
-                        <Button href="https://github.com/moneypot/moneypot-wallet-electron/releases/download/v0.0.1/moneypot-0.0.1_Setup.exe" color="secondary">Download windows setup</Button> {<br/>}
-                        <a href="https://github.com/moneypot/moneypot-wallet-electron/releases/download/v0.0.1/moneypot-0.0.1_Setup.exe.asc" style={{color: '#fff'}}><FontAwesomeIcon icon={faPaperclip} />Accompanying signature</a>
+                        <Button href="https://github.com/moneypot/moneypot-wallet-electron/releases/download/v1.0.0/moneypot-1.0.0.Setup.exe" color="secondary">Download windows setup</Button> {<br/>}
+                        <a href="https://github.com/moneypot/moneypot-wallet-electron/releases/download/v1.0.0/moneypot-1.0.0.Setup.exe.asc" style={{color: '#fff'}}><FontAwesomeIcon icon={faPaperclip} />Accompanying signature</a>
 
                     </Col>
                     <Col xs="12" sm="4" md="4" lg="4">
                     <div className="hero-fourth-text">
                         <p >Linux (.deb): </p>
-                        <p>release: v0.0.1</p>
+                        <p>release: v1.0.0</p>
                     </div>
-                        <Button href="https://github.com/moneypot/moneypot-wallet-electron/releases/download/v0.0.1/moneypot_0.0.1_amd64.deb" color="secondary">Download Linux setup</Button> {<br/>}
-                        <a href="https://github.com/moneypot/moneypot-wallet-electron/releases/download/v0.0.1/moneypot_0.0.1_amd64.deb.asc" style={{color: '#fff'}}><FontAwesomeIcon icon={faPaperclip} />Accompanying signature</a>
+                        <Button href="https://github.com/moneypot/moneypot-wallet-electron/releases/download/v1.0.0/moneypot_1.0_amd64.deb" color="secondary">Download Linux setup</Button> {<br/>}
+                        <a href="https://github.com/moneypot/moneypot-wallet-electron/releases/download/v1.0.0/moneypot_1.0_amd64.deb.asc" style={{color: '#fff'}}><FontAwesomeIcon icon={faPaperclip} />Accompanying signature</a>
                     </Col>
                     {/* <Col xs="12" sm="4" md="4" lg="4">
                     <div className="hero-fourth-text">
@@ -72,7 +72,7 @@ const HowandWhy = () => {
         This is a valid question. An electron implementation of moneypot has been created for a number of purposes, with the most notable one of them being: heightened security and privacy.
     </p>
     <p>
-      When you load the moneypot wallet in your browser, you assume that <code>https://moneypot.com</code> belongs to <i>"us"</i>, the <i>"original"</i> moneypot developers. However, through malice, error, or other circumstances, it can happen that either the domain name, or the wallet script is corrupted and or harmful.
+      When you load the moneypot wallet in your browser, you assume that <code>moneypot.com</code> belongs to <i>"us"</i>, the <i>"original"</i> moneypot developers. However, through malice, error, or other circumstances, it can happen that either the domain name, or the wallet script is corrupted and or harmful.
       In that case, your browser will still load the <i>"script"</i>: (<i>read:</i> <b>wallet</b>), as long as the checksum is correct, which can cause a loss of funds.
     </p>
     <p>
@@ -91,13 +91,18 @@ const HowandWhy = () => {
     <h1>Verify the wallet executables!</h1>
 
     <p>
-        There are two ways you can verify the wallet signatures. First, you'll need to import our signing key, which can be found here. <a href="https://keybase.io/TODO/pgp_key.asc">TODO</a>
+        There are two ways you can verify the wallet signatures. First, you'll need to import our signing key, which can be found here. <a href="https://keybase.io/doofenshmirtz/pgp_keys.asc"> 3887 6AFC 1172 E3DF A17A  84BB 2E5F 4A83 BFE8 1B1B</a>
     </p>
+<p>Or, you can also import the key using the fingerprint.
+</p>
+<Col className="fee-box list-group-item-success" sm={{ size: 12, offset: 3 }}> 
+        <code>gpg --keyserver hpk://keyserver.ubuntu.com --recv-keys 38876AFC1172E3DFA17A84BB2E5F4A83BFE81B1B</code>
+         </Col> 
     <p>
         After that, you can either download the accompanying signature and verify that against your respective redistributable, which should check out.
     </p>
     <p>
-        Alternatively, you can calculate the hash of the redistributable yourself, and compare it against our signed hashes, which can be found here. <a href="https://github.com/moneypot/moneypot-wallet-electron/releases/download/v0.0.1/moneypot_0.0.1_SHASUMS256.asc">TODO SHASUMS256</a>
+        Alternatively, you can calculate the hash of the redistributable yourself, and compare it against our signed hashes, <a href="https://github.com/moneypot/moneypot-wallet-electron/releases/download/v1.0.0/shasums.asc">which can be found here</a>.
     </p>
     </SectionDiv>)
 }
@@ -119,13 +124,10 @@ const LatestUrl = () => {
             You might be wondering: how do I know I am loading the <i>real</i> wallet file?
             We will periodically update the latest version url to appear right below. However, as we have just explained, domain hijackings can happen at random.
             Therefore, it might be possible that the url linked below is also malicious. <br/>
-            To make sure you're not loading a malicious URL, please either visit our <a href="https://github.com/moneypot/moneypot-wallet-dist">github</a> and import the fingerprint we use to sign our releases with, or copy the fingerprint below.
+            To make sure you're not loading a malicious URL, please either visit our <a href="https://github.com/moneypot/moneypot-wallet-dist">github</a> and download the signature from there, or download it down below.
 
         </p>
 
-        <p>
-            Fingerprint <code>TODO</code>
-        </p>
         <p>
         Make sure to verify the fingerprint matches the one on github. If you're in doubt, contact our support!
         </p>
@@ -136,7 +138,7 @@ const LatestUrl = () => {
           <Link to="/changelog/#version-history">version history</Link>
          </Col> : undefined}
         <p>
-            The current version URL is as following: (as can be found <a href="https://github.com/moneypot/moneypot-wallet-dist/releases/v0.0.1">here</a> on github.)
+            The current version URL is as following: (as can be found <a href="https://github.com/moneypot/moneypot-wallet-dist/releases/v1.0.0">here</a> on github.)
         </p>
         {version != null ?
         <CopyToClipboard className="btn btn-light" style={{}} text={version.versionScript}>
@@ -144,12 +146,12 @@ const LatestUrl = () => {
          <FontAwesomeIcon icon={faCopy} />
           </CopyToClipboard> : undefined } 
         <p> 
-            For which the signature is as following: (which can be found <a href="https://github.com/moneypot/moneypot-wallet-dist/releases/v0.0.1">here</a> on github)
+            For which the signature is as following: (which can be found <a href="https://github.com/moneypot/moneypot-wallet-dist/releases/v1.0.0">here</a> on github)
         </p>
         {version != null ?
-        <Col className="fee-box list-group-item-success" sm={{ size: 12, offset: 3 }}> 
+       <div> <Col className="fee-box list-group-item-success" sm={{ size: 12, offset: 3 }}> 
         <code>{version.signature}</code>
-         </Col> : undefined }
+ </Col> <Button color="primary" href={`data:text/json;charset=utf-8,${encodeURIComponent(version.signature)}`} download={`moneypot_wallet_url_v1.0.0_sig.asc`}>Download sig!</Button></div>: undefined } {<br/> }
         <p>
             As explained, the signature should verify with the key belonging to the fingerprint linked above.
         </p> 
