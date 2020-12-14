@@ -1,3 +1,4 @@
 /explore/*  /explore/   200
 /api/dev/*  https://captain-hook-favwn27y2q-uc.a.run.app/:splat  200
 /api/testnet/* https://blockstream.info/testnet/api/:splat 200
+/api/* https://blockstream.info/api/:splat 200
