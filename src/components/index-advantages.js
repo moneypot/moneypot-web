@@ -20,7 +20,6 @@ const IndexAdvantages = () => { return (
                     <p>
                         All transactions are secured by <b>blinded schnorr signatures</b>.
                     </p>
-                    <Link to="/privacy">Learn More</Link>
                 </Col>
             </Row>
             <Row className="row-container">
@@ -42,7 +41,6 @@ const IndexAdvantages = () => { return (
                     <p>
                         Trading within moneypot with other users is very fast. You don't need to wait for confirmations.
                     </p>
-                    <Link to="/">Learn More</Link>
                 </Col>
             </Row>
         </div>

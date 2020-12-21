@@ -37,8 +37,8 @@ const Hero = () =>  {
                     </Col>
                     <Col xs="12" sm="4" md="4" lg="3">
                     <div className="hero-fourth-text">
-                        <p >private alpha </p>
-                        <p>release: testnet only</p>
+                        <p >released! </p>
+                        <p>release: v1.0.0</p>
                     </div>
                         <Button size="lg" href="https://wallet.moneypot.com" color="secondary">Go to Wallet</Button>
                     </Col>

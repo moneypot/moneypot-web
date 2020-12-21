@@ -8,9 +8,9 @@ export default function Whymoneypot() {
      return (    
         <div>
         <div className="index-notice">
-            <h2>Coming soon...</h2>
+            <h2>Released!</h2>
             <p>
-                The moneypot.com domain was aquired from monsterbyte.io and will be used for an exciting new crypto wallet. Currently in limit private testing, so please come back in a week or two!
+                The moneypot.com domain was acquired from monsterbyte.io and will be used for an exciting new crypto wallet.
             </p>
         </div>
         <h2>Why moneypot?</h2>
