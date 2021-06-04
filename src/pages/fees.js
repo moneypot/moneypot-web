@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from "react";
 import Layout from '../components/layout'
 import SectionDiv from '../components/section-div'
 import { Row, Col } from 'reactstrap';
@@ -6,7 +6,23 @@ import { Link } from 'gatsby'
 
 
 
-const Fees = () => (
+// hourfee = 6 blocks == immediate, etc.
+const Fees = () => {
+    // https://bitcoinfees.earn.com/api/v1/fees/recommended
+    const [fees, setFees] = useState(undefined)
+    const getData = () => fetch(`https://bitcoinfees.earn.com/api/v1/fees/recommended`).then((res) => res.status === 200 ? res.json() : null).catch(error => alert(error.message));
+    
+
+    useEffect(() => {
+        getData().then((data) => setFees(data))
+    }, [])
+
+    if (fees === undefined) {
+        return <div>Fetching feerates!</div>
+    }
+
+
+    return (
     <Layout>
         <SectionDiv>
             <h1>Fees</h1>
@@ -17,27 +33,27 @@ const Fees = () => (
                     sm={{ size: 3, offset: 3 }}>Immediate + High priority:
                 </Col>
                 <Col className="fee-box green-fee"
-                    sm="3">10,000 satoshi
+                    sm="3">{fees.fastestFee * 561} satoshi
                 </Col>
             </Row>
             <Row>
                 <Col className="fee-box list-group-item-success"
                     sm={{ size: 3, offset: 3 }}>Immediate + Normal priority:
                 </Col>
-                <Col className="fee-box list-group-item-success" sm="3">5,000 satoshi
+                <Col className="fee-box list-group-item-success" sm="3">{fees.hourFee * 561} satoshi
                 </Col>
             </Row>
             <Row>
                 <Col className="fee-box list-group-item-warning"
-                     sm={{ size: 3, offset: 3 }}>Queued (~24 hours):
+                     sm={{ size: 3, offset: 3 }}>Queued (Batch transaction):
                 </Col>
-                <Col className="fee-box list-group-item-warning" sm="3">500 satoshi
+                <Col className="fee-box list-group-item-warning" sm="3">{fees.hourFee * (31 * 4)} satoshi
                 </Col>
             </Row>
             <Row>
                 <Col className="fee-box list-group-item-danger" sm={{ size: 3, offset: 3 }}>Low priority (~7 days):
                 </Col>
-                <Col className="fee-box list-group-item-danger" sm="3" >50 satoshi
+                <Col className="fee-box list-group-item-danger" sm="3" >561 satoshi
                 </Col>
             </Row>
 
@@ -50,7 +66,7 @@ const Fees = () => (
             <Row>
                 <Col className="fee-box list-group-item-info" sm={{ size: 3, offset: 3 }}>Deposit fee:
                 </Col>
-                <Col className="fee-box list-group-item-info" sm="3">50 satoshi
+                <Col className="fee-box list-group-item-info" sm="3">50-1000 satoshi
                 </Col>
             </Row>
         </SectionDiv>
@@ -74,8 +90,9 @@ const Fees = () => (
                 <li><b>Consolidation. </b>Consolidation is a very complex process to cost effectively manage. It trades off fees/security/privacy. We do this for you at scale.</li>
             </ul>
         </SectionDiv>
-    </Layout>
-)
+    </Layout>   
+    )
+}
 
 export default Fees
 

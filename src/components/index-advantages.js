@@ -15,10 +15,10 @@ const IndexAdvantages = () => { return (
                 <Col className="text-container" xs={8}>
                     <h3 className="header">The most private service</h3>
                     <p>
-                        There will be no way to track your transactions, moneypot offers you the most private service in the market.
+                        All transactions are secured by <b>blinded schnorr signatures</b>.
                     </p>
                     <p>
-                        All transactions are secured by <b>blinded schnorr signatures</b>.
+                        This means that there will be no way for moneypot to track your transactions! Moneypot offers you the most private mixing service in the market, and it's privacy is not based on promises or trust!
                     </p>
                 </Col>
             </Row>
@@ -39,7 +39,7 @@ const IndexAdvantages = () => { return (
                 <Col xs={8} className="text-container">
                     <h3 className="header">It's fast, almost instant!</h3>
                     <p>
-                        Trading within moneypot with other users is very fast. You don't need to wait for confirmations.
+                        Trading within moneypot with other users is very fast. You don't need to wait for confirmations. 
                     </p>
                 </Col>
             </Row>

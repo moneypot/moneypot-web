@@ -1,8 +1,65 @@
-import React from 'react'
+import React, {useState, useEffect} from "react";
 import Layout from '../components/layout'
 import SectionDiv from '../components/section-div'
 import { Link } from 'gatsby'
 import { Row, Col } from 'reactstrap';
+
+// seperate function to prevent page from not loading when cust is down
+const LoadCoins = () => { 
+
+    const [coins, setCoins] = useState(undefined)
+    const getData = () => fetch(`https://testnet.moneypot.dev`).then((res) => res.status === 200 ? res.json() : null).catch(error => alert(error.message));
+    
+
+    useEffect(() => {
+        getData().then((data) => setCoins(data))
+    }, [])
+
+    if (coins === undefined) {
+        return <div>Fetching coins!</div>
+    }
+
+    return(
+    <Row>
+    <Col sm="12" md={{ size: 10, offset: 1 }}>
+        <h1>Coins</h1>
+        <p>
+            There are exactly 32 different coins in moneypot, each having a different <strong>magnitude</strong>
+        </p>
+        <p>
+            Here is an example from our testnet custodian: (https://testnet.moneypot.dev)
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Magnitude</th>
+                    <th>Bitcoin Value</th>
+                    <th>Signing Key</th>
+                </tr>
+            </thead>
+            <tbody>
+               {coins.blindCoinKeys.map( (key, index) => {
+                   return (
+                    <tr key={key}>
+                        <th>
+                            {key}
+                        </th>
+                        <th>
+                        {(2**index / 1e8).toFixed(8)}
+                        </th>
+                        <th>
+                        {index}
+                        </th>
+                    </tr>  
+                   )
+                })}
+            </tbody>
+        </table>
+    </Col>
+</Row>)
+}
+
+
 
 const Overview = () => (
     <Layout>
@@ -71,7 +128,7 @@ const Overview = () => (
                         <a href="#hookouts" className="anchor-section float-right">#</a>
                     </h2>
                     <p>
-                        Blinded coins can also be transfered. The great thing about this is it is extremely efficient (no on-chain transaction) with
+                        Blinded coins can also be transferred. The great thing about this is it is extremely efficient (no on-chain transaction) with
                         negligible fees and immedately finality (at least as quick as be when communicating with a server). It is also frequent to transfer and exchange
                         coins with yourself. For instance if you have 3 coins of magnitudes 5, it would make sense to convert 2 of them into a mangitude 6 coin.
                     </p>
@@ -81,38 +138,10 @@ const Overview = () => (
         </SectionDiv>
         
         <SectionDiv>
-            <Row>
-                <Col sm="12" md={{ size: 10, offset: 1 }}>
-                    <h1>Coins</h1>
-                    <p>
-                        There are exactly 32 different coins in moneypot, each having a different <strong>magnitude</strong>
-                    </p>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Magnitude</th>
-                                <th>Bitcoin Value</th>
-                                <th>Signing Key</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            { /* hi.Params.blindingCoinPublicKeys.map( (pub, magnitude) => (
-
-
-                              <tr key={ magnitude }>
-                                  <th>{ magnitude }</th>
-                                  <td>{ (2**magnitude / 1e8).toFixed(8) } btc</td>
-                                  <td><code>{ pub.toPOD() }</code></td>
-                              </tr>
-                            )) */ }
-                        </tbody>
-                    </table>
-                </Col>
-            </Row>
+           <LoadCoins/>
         </SectionDiv>
         
     </Layout>
 )
-
 
 export default Overview

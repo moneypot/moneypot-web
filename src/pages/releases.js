@@ -107,15 +107,21 @@ const HowandWhy = () => {
     </SectionDiv>)
 }
 
+
+// updates down for now
 const LatestUrl = () => { 
     
     const [version, setData] = useState(null)
-    const getData = () =>
-      fetch(`https://updates.moneypot.dev/`)
-        .then((res) => res.status === 200 ? res.json() : null).catch(error => alert(error.message));
-        useEffect(() => {
-            getData().then((data) => setData(data))
-        }, [])
+    const getData = () =>fetch(`https://updates.moneypot.dev/`).then((res) => res.status === 200 ? res.json() : null).catch(error => alert(error.message));
+    
+    useEffect(() => {
+       getData().then((data) => setData(data))
+    }, [])
+
+    if (version === undefined) {
+        return <div>Fetching version!</div>
+      }
+
     return (
         <SectionDiv>
          {<br/>}{<hr/>}
