@@ -141,7 +141,7 @@ const LatestUrl = () => {
        {version != null ?  <Col className="fee-box list-group-item-success" sm={{ size: 12, offset: 3 }}> 
     The version URL has last been changed on <strong>{JSON.stringify(new Date(version.latestDate).toLocaleDateString()).replace(/"/g, '')}</strong> which is <strong>~{JSON.stringify(Math.round((new Date().getTime() - new Date(version.latestDate).getTime()) / (60*60*24*1000)))}</strong>  days ago! For more information
           please check the{" "}
-          <Link to="/changelog/#version-history">version history</Link>
+          <Link to="/stats">version history</Link>
          </Col> : undefined}
         <p>
             The current version URL is as following: (as can be found <a href="https://github.com/moneypot/moneypot-wallet-dist/releases/v1.0.0">here</a> on github.)

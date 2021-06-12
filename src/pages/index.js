@@ -16,14 +16,21 @@ const IndexPage = () => {
         <Hero />
         <SectionDiv>
             <Whymoneypot/>
-  
-            <p>moneypot allows you to use bitcoin as a consumer or to accept bitcoin payments for your business, offering in both cases attractive advantages!</p>
             <Row>
+             <Col sm="12" md={{ size: 10, offset: 1 }}>
+             <br/>
+             <hr/>
+              <p>moneypot allows you to use bitcoin as a consumer or to accept bitcoin payments for your business, offering in both cases attractive advantages!</p>
+             </Col>
+            </Row>
+            <Row>
+            <Col sm="12" md={{ size: 10, offset: 1 }}>
+                <Row>
                 <Col>
                     <h3>Send and Receive</h3>
                     <p>Trade with other individuals within moneypot or externally. Fast and with very low fees. Internal transfers are free!</p>
                 </Col>
-                <Col>
+                <Col >
                     <h3>Store</h3>
                     <p>Use moneypot wallet to keep your bitcoin safely for later use</p>
                 </Col>
@@ -34,29 +41,33 @@ const IndexPage = () => {
   
                     </p>
                 </Col>
+                </Row>
+                <hr/>
+                </Col>
             </Row>
         </SectionDiv>
         <IndexAdvantages />
         <SectionDiv>
-            <h2>Are you thinking of the possible drawbacks?</h2>
             <Row>
-  
-                <Col xs={7} sm={9} md={10}>
+             <Col xs={12} sm={9} md={{ size: 8, offset: 2}}>
+              <br/>
+              <hr/>
+                <h2>Are you thinking of the possible drawbacks?</h2>
                     <h3>Counter-party-risk</h3>
                     <p>moneypot requires you to place your bitcoin in our custody, therefore it is not trustless.
                         To tackle this we have developed moneypot to be <Link to="/provably-honest">provably honest</Link>.
                     </p>
-                </Col>
+             </Col>
             </Row>
             <br/>
             <Row>
-                <Col xs={7} sm={9} md={10}>
+                <Col xs={12} sm={9} md={{ size: 8, offset: 2}}>
                     <h3>Availability</h3>
                     <p>moneypot stores your bitcoin offline, therefore our system needs to be online for you to access it.</p>
                     < p>So there's a very small risk that our service could be down at some point. </p>
                     <p>To mitigate this risk we use the most reliable servers in the market, and are running without problems 99.9% of the time.</p>
                 </Col>
-  
+                {/* TODO: add uptime call here from upptime actions @ github.io + graphs? */}
             </Row>
         </SectionDiv>
         <IndexSolidBgSection>

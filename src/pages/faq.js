@@ -149,7 +149,7 @@ const BusinessModel = () => {
 <br/> Be wary of custodians which don't specify wipe dates and/ or subsequently ask what their "alternative" business model is.</p> </UncontrolledCollapse>
 
 
-<div id="biz3" className="faq-linebreak"><h3> <FontAwesomeIcon icon={faQuestionCircle} /> Help! My custodian wiped before I were able to withdraw my money!</h3> </div>
+<div id="biz3" className="faq-linebreak"><h3> <FontAwesomeIcon icon={faQuestionCircle} /> Help! My custodian wiped before I was able to withdraw my money!</h3> </div>
 <UncontrolledCollapse toggler="biz3" style={{marginLeft: 50, marginBottom: 0}}><p>Please differentiate between the two most obvious scenario's: <i>Either you were too late</i>, in which case moneypot will likely be unable to assist you. 
 You could contact moneypot (or the operator of the custodian) with a list of your unblinded coins along with the receipt(s) and magnitude(s), but there are no guarantees. (moneypot will most likely publish a recovery policy in a little while which specifies how and in which timeframe you'll be able to recover your lost coins on their affiliated custodians.) </p> 
 <p><i>Or the custodian diverted from their previously announced wipe date</i>: In which case you should immediately publish and/ or email a copy of your config + the accompanying signature signed by the custodian. 

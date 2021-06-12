@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { faQuestion, faBusinessTime } from "@fortawesome/free-solid-svg-icons";
+import { Row, Col } from 'reactstrap';
 
 
 const Table = () => {
@@ -34,7 +36,7 @@ const Table = () => {
         <div>
             <div>Send fee [eco]</div>
             <div>{fees.hourFee * (31 * 4)} sat (-{(((fees.hourFee * (561)) - (fees.hourFee * (31 * 4))) / (fees.hourFee * (561)) * 100).toFixed(2)}%){" "} <FontAwesomeIcon icon="check" style={{ color: 'green'}}/></div>
-    <div>{fees.fastestFee * (561)} sat {" "}  <FontAwesomeIcon icon="times" style={{ color: 'red'}}/></div>
+    <div>{fees.hourFee * (561)} sat {" "}  <FontAwesomeIcon icon="times" style={{ color: 'red'}}/></div>
         </div>
         <div>
             <div>Send fee [free]</div>
@@ -56,6 +58,16 @@ const Table = () => {
             <div><FontAwesomeIcon icon="check" style={{ color: 'green'}}/> moneypot lightning</div>
             <div><FontAwesomeIcon icon="times" style={{ color: 'red'}}/></div>
         </div>
+        <div>
+            <div>Native Segwit</div>
+            <div><FontAwesomeIcon icon="check" style={{ color: 'green'}}/> </div>
+            <div><FontAwesomeIcon icon={faQuestion} style={{ color: 'grey'}}/></div>
+        </div>
+        <div>
+            <div>Taproot</div>
+            <div><FontAwesomeIcon icon={faBusinessTime} style={{ color: 'green'}}/> </div>
+            <div><FontAwesomeIcon icon={faQuestion} style={{ color: 'grey'}}/></div>
+        </div>
     </div>
     )
 
@@ -66,6 +78,8 @@ export default function Whymoneypot() {
 
      return (    
         <div>
+        <Row>
+          <Col sm="12" md={{ size: 10, offset: 1 }}>
         <div className="index-notice">
             <h2>Released!</h2>
             <p>
@@ -74,7 +88,10 @@ export default function Whymoneypot() {
         </div>
         <h2>Why moneypot?</h2>
                 <p style={{fontWeight: 'bold'}}>See for yourself:</p>
+                </Col>
+                </Row>
                 <Table/>
+
     </div> )}
 
  

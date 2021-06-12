@@ -24,6 +24,8 @@ const Fees = () => {
 
     return (
     <Layout>
+      <Row>
+       <Col sm="12" md={{ size: 10, offset: 1 }}>
         <SectionDiv>
             <h1>Fees</h1>
             <h2>Withdrawal</h2>
@@ -53,7 +55,7 @@ const Fees = () => {
             <Row>
                 <Col className="fee-box list-group-item-danger" sm={{ size: 3, offset: 3 }}>Low priority (~7 days):
                 </Col>
-                <Col className="fee-box list-group-item-danger" sm="3" >561 satoshi
+                <Col className="fee-box list-group-item-danger" sm="3" >100 satoshi
                 </Col>
             </Row>
 
@@ -90,6 +92,8 @@ const Fees = () => {
                 <li><b>Consolidation. </b>Consolidation is a very complex process to cost effectively manage. It trades off fees/security/privacy. We do this for you at scale.</li>
             </ul>
         </SectionDiv>
+      </Col>
+     </Row>
     </Layout>   
     )
 }
