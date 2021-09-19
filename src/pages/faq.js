@@ -67,13 +67,26 @@ const WorkingsWallet = () => {
   It is therefore possible to receive your own inputs back. </p> 
   <p> If this is something you are bothered about, note that there is invariably a possibility that the link is not broken. This is not the or a focus of moneypot.</p> 
   
-  <p>Certain measures that could decrease the chances of you receiving your own inputs back could be: switching from <i>lightning</i> to <i>normal</i> transactions and vice versa; waiting a certain amount of time for your original inputs to rollover, or spending radically different amounts. <code>These measures should not be confused with unlinkeability!</code>. Again, this is not a priority for moneypot, nor possible, so we cannot be of help with such problems. </p> </UncontrolledCollapse>
-  <div id="Workingswallet2" className="faq-linebreak"><h3> <FontAwesomeIcon icon={faQuestionCircle} />  Help! Does moneypot offer on-chain unlinkeability?!</h3>   </div>
-  <UncontrolledCollapse toggler="Workingswallet2" style={{marginLeft: 50, marginBottom: 0}}> <p>This question is a bit of a rehash and or has a lot of common ground with the above-mentioned question, yet it is still important to make clear: <b>NO!</b> moneypot does <b>NOT</b> offer on-chain unlinkeability.</p>
-  <p> What moneypot does offer, (that is, under the most ideal conditions) is unlinkeability within its own ecosystem. What exactly does this mean, you ask? For that we first need to explore what exactly unlinkeability is, and how it's applied in this context. 
+  <p>Certain measures that could decrease the chances of you receiving your own inputs back could be: switching from <i>lightning</i> to <i>normal</i> transactions and vice versa; waiting a certain amount of time for your original inputs to be used by other people, or spending radically different amounts. <code>These measures should not be confused with <i>literal</i> unlinkability!</code>. Again, this is not a priority for moneypot, nor possible, so we cannot be of help with such problems. </p> 
+  <p>Please read the next FAQ for a more detailed answer.</p> </UncontrolledCollapse>
+  <div id="Workingswallet2" className="faq-linebreak"><h3> <FontAwesomeIcon icon={faQuestionCircle} />  Help! Does moneypot offer on-chain unlinkability?!</h3>   </div>
+  <UncontrolledCollapse toggler="Workingswallet2" style={{marginLeft: 50, marginBottom: 0}}> <p>This question is a bit of a rehash and or has a lot of common ground with the above-mentioned question, yet it is still important to make clear: <b>NO!</b> moneypot does <b>NOT</b> offer on-chain unlinkability in the literal sense of the word.</p>
+  <p> What moneypot does offer, (that is under the most ideal conditions) is complete unlinkability within its own ecosystem. What exactly does this mean, you ask? For that we first need to explore what exactly unlinkability is, and how it's applied in this context. 
     </p>
-    <p> At moneypot, we speak of something being unlinked if there is a statistical improbability that calculates to a functional impossibility of A provably being related to B.</p>
-      <p> Within the moneypot ecosystem, we can speak to the variables that make this possible; that is, if our software is used correctly, this environment can be created. Partly as a result thereof, it is impossible for us to speak to the unlinkeability outside of our ecosystem.
+ 
+ {/* <p>Usually in more technical settings unlinkability is defined as a property of being unable to observe a relationship between two objects in a system.</p> */}
+ <p>Usually in more technical settings unlinkability is defined as follows: <i>
+ Unlinkability of two or more items of interest (IOIs, e.g., subjects, messages, events, 
+actions, ...) means that within the system (comprising these and possibly other items), 
+from the attacker’s perspective, these items of interest are no more and no less related 
+after his observation than they are related concerning his a-priori knowledge.</i> [1S] <i>This means that the probability of those items being related from the attacker’s perspective stays 
+the same before (a-priori knowledge) and after the attacker’s observation (a-posteriori knowledge 
+of the attacker).</i> [2S]</p>
+ <p> Within the moneypot ecosystem (whereby the custodian is the attacker), we can speak to the variables that make this possible; that is, if our software is used correctly, this environment can be created. Partly as a result thereof, it is impossible for us to speak to the (literal) unlinkability outside of our ecosystem.
+      <p>For example: (strictly theorethically speaking; of course there are several practical variables (timing) which greatly influence this) for every coin of magnitude X added to the set, the chances of us guessing which blinded coin belonged to you (and thus your input) decreases rapidly ( 1 / N ) where N is the number of currently active blinded coins of said magnitude X.</p>
+      <p>Though perhaps we need to further redefine what unlinkability means. If we speak of something being unlinked as there being a statistical improbability of A (provably) being related to B, then of course it would seem highly unlikely that an on-chain input that has been reused a large number of times (but has not been unlinked in the literal sense of the word) for example: (A -{">"} B -{">"} C -{">"} D -{">"} E -{">"} F), would necessarily trace back to you. </p>
+      <p>For example: Imagine input A with 50 BTC. It becomes aggregated input B with 100 BTC, and so on. Input C with 40 BTC. Input D with 200 BTC. Input E with 100 BTC. Now you withdraw 20 BTC, call it F. As long as you don't withdraw the exact same amount (or a close division of it), despite a linked chain, it does not at all imply that A is necessarily related to F. Not to an observer, and not to us. thus plausible deniability is achieved, and with that privacy.</p>
+     <a href="https://www.freehaven.net/anonbib/cache/terminology.pdf"> 1[S]</a>  2[S] ISO IS 15408, 1999,<a href="http://www.commoncriteria.org/">http://www.commoncriteria.org/</a>
         </p></UncontrolledCollapse>
   
 

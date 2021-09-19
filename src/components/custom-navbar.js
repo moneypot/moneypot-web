@@ -56,9 +56,10 @@ const CustomNavbar = (props) => {
                     <NavItem>
                         <Link className={'nav-link '+ navbarColorClass } to="/fees/">Fees</Link>
                     </NavItem>
-                    <NavItem>
+                    {/* // shell this for now. */}
+                    {/* <NavItem>
                         <Link className={'nav-link '+ navbarColorClass } to="/docs/">Docs</Link>
-                    </NavItem>
+                    </NavItem> */}
                 </Nav>
             </Collapse>
         </Navbar> : <div className="navbar-mobile">

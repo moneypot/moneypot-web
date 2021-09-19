@@ -8,6 +8,7 @@ import SectionDiv from "../components/section-div";
 import IndexAdvantages from "../components/index-advantages"
 import IndexSolidBgSection from '../components/index-solid-bg-section'
 import Whymoneypot from "../components/why-moneypot";
+//import Uptime from "../components/uptime-block";
 
 
 const IndexPage = () => { 
@@ -31,13 +32,14 @@ const IndexPage = () => {
                     <p>Trade with other individuals within moneypot or externally. Fast and with very low fees. Internal transfers are free!</p>
                 </Col>
                 <Col >
-                    <h3>Store</h3>
-                    <p>Use moneypot wallet to keep your bitcoin safely for later use</p>
+                    <h3>Store and reap the rewards!</h3>
+                    <p>Use the moneypot wallet as a hub to buy everyday products against very low fees!</p>
                 </Col>
                 <Col>
                     <h3>E-commerce</h3>
                     <p>moneypot platform will allow you to process bitcoin payments from your customers, safely, cost effectively and hands free.
-                      Super easy to generate your own <Link to="/docs/derive-deposit-addresses">deposit addresses offline</Link>. 
+                      {/* // shell this for now */}
+                      {/* Super easy to generate your own <Link to="/docs/derive-deposit-addresses">deposit addresses offline</Link>.  */}
   
                     </p>
                 </Col>
@@ -66,7 +68,9 @@ const IndexPage = () => {
                     <p>moneypot stores your bitcoin offline, therefore our system needs to be online for you to access it.</p>
                     < p>So there's a very small risk that our service could be down at some point. </p>
                     <p>To mitigate this risk we use the most reliable servers in the market, and are running without problems 99.9% of the time.</p>
+                    {/* <p>Track our uptime here!</p> */}
                 </Col>
+                {/* <Uptime api="m788403555-207734a355c3aa2077206397"/>  ????? TODO*/}
                 {/* TODO: add uptime call here from upptime actions @ github.io + graphs? */}
             </Row>
         </SectionDiv>

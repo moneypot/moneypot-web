@@ -17,9 +17,9 @@ const Fees = () => {
         getData().then((data) => setFees(data))
     }, [])
 
-    if (fees === undefined) {
-        return <div>Fetching feerates!</div>
-    }
+    // if (fees === undefined) {
+    //     return <div>Fetching feerates!</div>
+    // }
 
 
     return (
@@ -30,7 +30,7 @@ const Fees = () => {
             <h1>Fees</h1>
             <h2>Withdrawal</h2>
             <p>These fees includes both bitcoin blockchain fees and our commission. The list is updated dynamically, according to current market fees.</p>
-            <Row>
+            {fees ? <div> <Row>
                 <Col className="fee-box green-fee"
                     sm={{ size: 3, offset: 3 }}>Immediate + High priority:
                 </Col>
@@ -57,8 +57,7 @@ const Fees = () => {
                 </Col>
                 <Col className="fee-box list-group-item-danger" sm="3" >100 satoshi
                 </Col>
-            </Row>
-
+            </Row></div> : undefined}
             <h2>Deposit</h2>
             <p>Our fee system is optimized to offer the lowest cost in the market, as well as being transparent for you. There are no hidden fees.</p>
             <p>

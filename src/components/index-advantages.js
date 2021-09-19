@@ -23,13 +23,13 @@ const IndexAdvantages = () => { return (
                 </Col>
             </Row>
             <Row className="row-container">
-                <Col xs={12} md={{ size: 8 }}>
+                <Col xs={12} md={{ size: 8, offset: 2 }}>
                     <h2 className="header">Save on fees!</h2>
                     <p>
                         moneypot uses a state-of-the-art algorithm for coin selection to ensure the fees paid in bitcoin transactions are the lowest possible.
                     </p>
                 </Col>
-                <Col className="text-container" xs={8} md={{ size: 8}}>
+                <Col className="text-container" xs={8} md={{ size: 8, offset: 2}}>
     
                     <Link to="/fees">Go to fees page</Link>
                 </Col>

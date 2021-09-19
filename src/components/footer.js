@@ -35,10 +35,10 @@ const Footer = () =>{
                         <Link to="/faq">FAQ</Link>
     
                     </Col>
-                    <Col>
+                    {/* <Col>
                         <Link to="/stats">Statistics</Link>
     
-                    </Col>
+                    </Col> */}
 
 
                 </Row>
